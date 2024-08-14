@@ -1,0 +1,56 @@
+<html>
+<head><title>My first Web Page</title></head>
+<!--<body>
+    <h1>Welcome To Web Designing</h1>
+    <h2>Welcome To Web Designing</h2>
+    <h3>Welcome To Web Designing</h3>
+    <h4>Welcome To Web Designing</h4>
+    <h5>Welcome To Web Designing</h5>
+    <h6>Welcome To Web Designing</h6>
+</body>-->
+<!--<p> <b>Lorem ipsum dolor sit amet consectetur adipisicing elit.</b> <i> Amet, adipisci pariatur voluptas mollitia vitae aliquid.
+     Ullam eius quod odit. <small></small> voluptate, nam atque ducimus quas non labore, quisquam soluta impedit quidem 
+     ratione. </small> 10 <sup>2</sup>Animi reiciendis nam omnis iusto. Eveniet, voluptatibus soluta. Expedita magnam excepturi vero, et 
+     molestias exercitationem molestiae voluptatum esse. </i> </p>-->
+<body>
+    <hr>
+    <h2>Shopping List </h2>
+    <!--Ordered List (ol), (li) list item -->
+    <ul>
+        <li>Milk</li>
+        <li>Peanut Butter</li>
+        <li>Coffee</li>
+        <li>Jam</li>
+        <li>Maggie</li>
+        <li>Corn Flake</li>
+        <li>Rusk</li>
+        <li>Brown Bread</li>
+    </ul>
+    <hr>
+    <h2>Maggie Recipe</h2>
+    <ol type="I">
+        <li>Boil 1 and Half cup of water </li>
+        <li>Break the noddle cake in half</li>
+        <li>Add the maggie masala</li>
+        <li>Cook for 2 min </li>
+        <li>Aur hamari tasty maggie ab tyar hai!</li>
+    </ol>
+</body>
+<!--Nesting of list-->
+<h2>Maggie Recipe</h2>
+    <ol type="I">
+        <li>Boil 1 and Half cup of water </li>
+        <li>Break the noddle cake in half</li>
+        <li>Add the maggie masala</li>
+        <li>Add some vegggies like:-
+            <ul>
+                <li>Peas</li>
+                <li>carrot</li>
+                <li>Potatoes</li>
+                <li>Onions</li>
+            </ul>
+        </li>
+        <li>Cook for 2 min </li>
+        <li>Aur hamari tasty maggie ab tyar hai!</li>
+    </ol>
+</html>
