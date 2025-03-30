@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">E-Commerce</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cart <span class="badge bg-primary" id="cart-count">0</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://media.currys.biz/i/currysprod/10259958?$l-large$&fmt=auto" class="img-fluid" alt="Product Image">
+            </div>
+            <div class="col-md-6">
+                <h2>Product Name</h2>
+                <p class="text-muted">₹95,499.00</p>
+                <p>High-quality product description goes here.</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" class="form-control w-25" value="1" min="1">
+                <button class="btn btn-primary mt-3" id="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="mt-5">
+            <h3>Shopping Cart</h3>
+            <ul id="cart-items" class="list-group"></ul>
+            <p class="mt-3">Total: <span id="cart-total">₹0.00</span></p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            let cart = [];
+
+            $('#add-to-cart').click(function () {
+                let quantity = parseInt($('#quantity').val());
+                let price = 95499.00;
+                let item = { name: 'Product Name', quantity: quantity, price: price };
+
+                cart.push(item);
+                updateCart();
+            });
+
+            function updateCart() {
+                $('#cart-items').empty();
+                let total = 0;
+                let count = 0;
+
+                cart.forEach((item, index) => {
+                    let itemTotal = item.quantity * item.price;
+                    total += itemTotal;
+                    count += item.quantity;
+                    $('#cart-items').append(`<li class="list-group-item">
+                        ${item.name} - ${item.quantity} x ₹${item.price.toFixed(2)} = ₹${itemTotal.toFixed(2)}
+                    </li>`);
+                });
+                $('#cart-total').text(`₹${total.toFixed(2)}`);
+                $('#cart-count').text(count);
+            }
+        });
+    </script>
+</body>
+</html>
